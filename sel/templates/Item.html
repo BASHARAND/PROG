@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<br>
+  <br><br>  <br><br>
+  <br><br>
+
+  <br><br>
+  <br>
+  <p><div><form  action="" method="POST">
+    {% csrf_token %}
+   <div class="fieldWrapper">
+
+            {{ field.errors }}
+
+      <center> <table border="1" width="80%" >
+            <tr >
+    <td height="100px" align="center" >{{form.count}}</td>
+    <td align="center">{{form.Ch}}</td>
+    <td>{{form.M}}</td>
+
+    <td align="center">{{form.K}}</td>
+    <td align="center">{{form.p}}</td>
+    <td align="center">{{form.S}}</td>
+    <td align="center">{{form.T}}</td>
+
+  </tr>
+           <tr ><td align="center" >العدد</td>
+<td align="center"><img src="/media/Profile_image/cheesess.jpg"  class="w3-bar-item w3-circle "  style={"width:20px";"high:20px;"}></td>
+<td align="center"><img src="/media/Profile_image/maeonezss.jpg"  class="w3-bar-item w3-circle "  style={"width:50px";"high:10px;"}></td>
+<td align="center"><img src="/media/Profile_image/kachaps.jpg"  class="w3-bar-item w3-circle "  style={"width:50px";"high:10px;"}></td>
+<td align="center"><img src="/media/Profile_image/poteto_smallss.jpg"  class="w3-bar-item w3-circle "  style={"width:50px";"high:10px;"}></td>
+<td align="center"><img src="/media/Profile_image/spicyss.jpg"  class="w3-bar-item w3-circle "  style={"width:50px";"high:10px;"}></td>
+<td align="center"><img src="/media/Profile_image/torshiss.jpg"  class="w3-bar-item w3-circle "  style={"width:50px";"high:10px;"}></td>
+
+           </tr>
+      </table></center>
+       <br>
+  <br>
+       <center> <button type="submit" id="dd">Add </button></center>
+
+</form></div></p>
+</body>
+</html>

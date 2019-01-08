@@ -1,0 +1,119 @@
+{%extends 'base.html' %}
+{% load static %}
+<h1 xmlns="http://www.w3.org/1999/html">home</h1>
+{% block head %}
+<head>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 10
+  ;
+}
+
+
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Style the topnav links */
+.topnav a {
+  float: left;
+
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 14px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.column {
+  float: left;
+  width: 33%;
+  high:20%;
+
+  padding: 2px;
+}
+
+</style>
+</head>
+<center>
+
+
+
+
+
+{% endblock %}
+{% block body%}
+<p class="container">
+<h1> Menue List</h1>
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href='/static/style/file.css'/>
+
+<center><a href="{% url 'print' order=order  %}"><button class="dropbtn" id="ar">ملخص الطلب</button></a></center>
+<br>
+    <center><a href="{% url 'cancle' order=order  %}"><button class="dropbtn" id="ar">إلغاء الطلب</button></a></center>
+
+{% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <center> <li class="{{ message.tags }}">{{ message }}</li></center>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+   <p align="left"> {%for product in products %}
+
+
+
+    <div class="column">
+
+
+        <a href="/sel/Item/{{product.id}}/"><img src=" {{product.image.url}}"  class="w3-bar-item w3-circle "  style={"width:50px";"high:10px;"}></a>
+
+   <center> <p>{{product.name}}
+    {{product.Price}} ريال</p></center>
+
+
+</form>
+
+
+</div></div>
+
+
+
+
+
+
+
+{%endfor%}</p>
+
+
+
+    </body>
+
+
+
+
+
+
+{% endblock %}

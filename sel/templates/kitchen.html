@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="refresh" content="5">
+    <style>
+
+table {
+    border-collapse: 3;
+    border: 2px solid black;
+    width: 100%;
+}
+
+th, td {
+    text-align: center;
+    padding: 15px;
+
+
+}
+tr:hover {background-color: #f5f5f5;}
+
+
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+    <meta charset="UTF-8">
+    <title>Kitchen</title>
+</head>
+<body>
+<meta http-equiv="refresh" content="5">
+
+
+
+
+{% for order in orders %}
+<p>Order N:{{ order.id}}    </p>
+<table>
+  <tr>
+    <th>Item</th>
+    <th>Count</th>
+      <th>Properties</th>
+
+     </tr>
+
+  <tr>
+{% for prod in prod %}
+        {% ifequal order.id prod.order_id_id  %}
+
+
+    <td>{{prod.product_id.name}}</td>
+
+    <td>{{prod.count}}</td>
+        <td>  {% ifequal prod.Ch 1 %}<img src="/media/cheesess.jpg">{% endifequal %}
+         {% ifequal prod.K 1 %} <img src="/media/Profile_image/kachaps.jpg">{% endifequal %}
+
+         {% ifequal prod.M 1 %} <img src="/media/Profile_image/maeonezss.jpg">{% endifequal %}
+         {% ifequal prod.Pot 1 %}<img src="/media/Profile_image/poteto_smallss.jpg">{% endifequal %}
+          {% ifequal prod.Sh 1 %}<img src="/media/Profile_image/spicyss.jpg">{% endifequal %}
+          {% ifequal prod.T 1 %} <img src="/media/Profile_image/torshiss.jpg">{% endifequal %}
+</td>
+
+</td>
+
+  </tr>
+
+       {% endifequal %}
+{% endfor %}
+<a href="{% url 'done' order_id=order.id %}"> <button type="button" class="btn btn-danger">Done</button></a>
+</table>
+<br><br>
+{%endfor%}
+</body>
+</html>
